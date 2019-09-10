@@ -1,4 +1,6 @@
-const options = require('./options.js');
+#!/usr/bin/env node
+
+const options = require('./options');
 const readline = require('readline');
 const fs = require('fs');
 
