@@ -1,20 +1,27 @@
 {
-  "name": "eslint-init",
-  "version": "1.0.0",
+  "name": "@jmoore914/eslint-init",
+  "version": "1.0.1",
   "bin": "./eslint-init.js",
-  "description": "Create eslint config file in current directory.",
-  "main": "./eslint-init.js",
+  "description": "Create eslint config file in the calling directory",
+  "main": "eslint-init.js",
+  "dependencies": {
+    "inquirer": "^7.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jmoore914/eslintSetup.git"
+    "url": "git+https://github.com/jmoore914/eslint-init.git"
   },
+  "keywords": [
+    "eslint"
+  ],
   "author": "jmoore914",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jmoore914/eslintSetup/issues"
   },
-  "homepage": "https://github.com/jmoore914/eslintSetup#readme",
-  "dependencies": {
-    "inquirer": "^7.0.0"
-  }
+  "homepage": "https://github.com/jmoore914/eslintSetup#readme"
 }
