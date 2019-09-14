@@ -19,9 +19,9 @@
     "eslint"
   ],
   "author": "jmoore914",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jmoore914/eslintSetup/issues"
+    "url": "https://github.com/jmoore914/eslint-init/issues"
   },
-  "homepage": "https://github.com/jmoore914/eslintSetup#readme"
+  "homepage": "https://github.com/jmoore914/eslint-init#readme"
 }
