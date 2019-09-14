@@ -1,6 +1,6 @@
 {
   "name": "@jmoore914/eslint-init",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "bin": "./eslint-init.js",
   "description": "Create eslint config file in the calling directory",
   "main": "eslint-init.js",
