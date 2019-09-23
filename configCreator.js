@@ -1,5 +1,7 @@
 const eslintTemplate = require('./.eslintrc.js');
 
+
+
 function createConfigFromPromptResponses(promptResponses){
 	const plugins = getPluginsFromPromptResponses(promptResponses);
 	const exts = filterItemsByPlugins(eslintTemplate.extends, plugins);

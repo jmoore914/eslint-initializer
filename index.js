@@ -4,6 +4,17 @@ const prompts = require('./prompts');
 const configCreator = require('./configCreator');
 const fs = require('fs');
 
+
+function checkTemplateExists(){
+	try {
+		return require('./eslintTemplate.js')
+	}
+	catch(e){
+		const templateCreator = require('./templateCreator.js')
+		templateCreator.createTemplate()
+	}
+}
+
 async function eslintInit(){
 	const callingDir = process.cwd();
 	const promptResponses = await prompts.awaitPrompts();
