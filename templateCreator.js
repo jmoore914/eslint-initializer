@@ -14,9 +14,10 @@ async function createTemplate(){
 
 
 async function getPath(){
-	const pathOrBrowse = await runAllPrompts(pathOrBrowsePrompt);
+	const pathOrBrowse = await runAllPrompts([pathOrBrowsePrompt]);
 	if(pathOrBrowse.pathOrBrowse === 'browse'){
-		const path = await runAllPrompts(browsePrompt);
+		console.log('a')
+		const path = await runAllPrompts([browsePrompt]);
 		return path.path;
 	}
 	else{
@@ -27,18 +28,18 @@ async function getPath(){
 const pathOrBrowsePrompt = {
 	type: 'input',
 	name: 'pathOrBrowse',
-	message: 'No config template found. Enter the path of a valid ".eslintrc.js" or enter "browse" to locate a template:',
+	message: 'No config template found. Enter the path of a valid ".eslintrc.js/.eslintrc.json" or enter "browse" to locate a template:',
 	validate: function(value) {
-		return value.toLowerCase() === 'browse' || value.endsWith('.eslintrc.js', '.eslintrc.json');
+		return value.toLowerCase() === 'browse' || value.endsWith('.eslintrc.js') || value.endsWith('.eslintrc.json');
 	}
 };
 
 const browsePrompt = {
 	type: 'file-selector',
 	name: 'path',
-	message: 'Select ".eslintrc.js"',
+	message: 'Select ".eslintrc.js" or ".eslintrc.json"',
 	path: homedir(),
-	extensions: ['.eslintrc.js']
+	extensions: ['.eslintrc.js','.eslintrc.json']
 };
 
 

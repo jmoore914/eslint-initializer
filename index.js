@@ -6,9 +6,7 @@ const fs = require('fs');
 
 
 async function eslintInit(){
-	console.log('b');
 	if(!checkTemplateExists()){
-		console.log('a');
 		const templateCreator = require('./templateCreator.js');
 		await templateCreator.createTemplate();
 	}

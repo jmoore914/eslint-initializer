@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 
 
 async function awaitPrompts(){
-	const answers = await runAllPrompts(typescriptPrompt, frameworkPrompt, environmentPrompt);
+	const answers = await runAllPrompts([typescriptPrompt, frameworkPrompt, environmentPrompt]);
 	return answers;
 
 }
@@ -11,7 +11,7 @@ async function awaitPrompts(){
 function runAllPrompts(prompts)	{
 	return new Promise((resolve) => {
 		inquirer
-			.prompt([prompts],)
+			.prompt(prompts)
 			.then((answers)=>resolve(answers));
 	});
 }
