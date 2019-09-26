@@ -1,8 +1,8 @@
-# eslint-init
+# eslint-initializer
 
 
-[![npm](https://img.shields.io/npm/v/@jmoore914/eslint-init)](https://www.npmjs.com/package/@jmoore914/eslint-init)
-![GitHub repo size](https://img.shields.io/github/repo-size/jmoore914/eslint-init)
+[![npm](https://img.shields.io/npm/v/eslint-initializer)](https://www.npmjs.com/package/eslint-initializer)
+![GitHub repo size](https://img.shields.io/github/repo-size/eslint-initializer)
 
 Quickly create an eslint config file in any directory based on your presets
 
@@ -10,7 +10,7 @@ Quickly create an eslint config file in any directory based on your presets
 ## Install
 
 ```javascript
-npm i -g @jmoore914/eslint-init
+npm i -g eslint-initializer
 ```
 
 ## Usage

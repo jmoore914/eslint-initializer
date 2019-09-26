@@ -1,9 +1,19 @@
 const inquirer = require('inquirer');
 
+
 async function awaitPrompts(){
-	const answers = await runAllPrompts();
+	const answers = await runAllPrompts(typescriptPrompt, frameworkPrompt, environmentPrompt);
 	return answers;
 
+}
+
+
+function runAllPrompts(prompts)	{
+	return new Promise((resolve) => {
+		inquirer
+			.prompt([prompts],)
+			.then((answers)=>resolve(answers));
+	});
 }
 
 const typescriptPrompt = {
@@ -16,7 +26,7 @@ const frameworkPrompt = {
 	type: 'list',
 	name: 'framework',
 	message: 'Which framework does your project use?',
-	choices: ['None','Vue', 'React'],
+	choices: ['None', 'Vue', 'React'],
 	filter: function(choice) {
 		return choice.toLowerCase().replace('None', '');
 	}
@@ -45,19 +55,9 @@ const environmentPrompt = {
 		}
 	]
 };
-	
-
-
-function runAllPrompts()	{
-	return new Promise((resolve) => {
-		inquirer
-			.prompt([typescriptPrompt, frameworkPrompt, environmentPrompt],)
-			.then((answers)=>resolve(answers));
-	});
-}
-
 
 
 module.exports={
-	awaitPrompts:awaitPrompts
+	awaitPrompts:awaitPrompts,
+	runAllPrompts: runAllPrompts
 };

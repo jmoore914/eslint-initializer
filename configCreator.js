@@ -1,11 +1,19 @@
-const eslintTemplate = require('./.eslintrc.js');
+const eslintTemplate = getTemplate();
 
-
+function getTemplate(){
+	try{
+		return require('./eslintTemplate.js');
+	}
+	catch(e){
+		return require('./eslintTemplate.json');
+	}
+}
 
 function createConfigFromPromptResponses(promptResponses){
+	const eslintTemplate = getTemplate();
 	const plugins = getPluginsFromPromptResponses(promptResponses);
 	const exts = filterItemsByPlugins(eslintTemplate.extends, plugins);
-	const envs = getEnvFromPromptResponses(promptResponses)
+	const envs = getEnvFromPromptResponses(promptResponses);
 	const pluginNames = eslintTemplate.plugins.filter(templatePlugin => plugins.some(promptPlugin => templatePlugin.includes(promptPlugin)));
 	const rules = filterRulesByPlugins(eslintTemplate.rules, plugins);
 	const parserConfig = getParserOptions(promptResponses);
@@ -18,7 +26,7 @@ function createConfigFromPromptResponses(promptResponses){
 	eslintConfig.plugins=pluginNames;
 	eslintConfig.rules=rules;
 	eslintConfig = {...eslintConfig, ...parserConfig};
-	return eslintConfig
+	return eslintConfig;
 
 }
 
@@ -34,9 +42,9 @@ function getPluginsFromPromptResponses(promptResponses){
 }
 
 function getEnvFromPromptResponses(promptResponses){
-	const envObject = {}
-	promptResponses.env.forEach(env => envObject[env]=true)
-	return envObject
+	const envObject = {};
+	promptResponses.env.forEach(env => envObject[env]=true);
+	return envObject;
 }
 
 function filterItemsByPlugins(items, plugins){

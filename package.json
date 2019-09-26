@@ -1,11 +1,11 @@
 {
   "name": "eslint-initializer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bin": {
     "eslint-init": "./index.js"
   },
   "description": "Create eslint config file in the calling directory",
-  "main": "eslint-init.js",
+  "main": "index.js",
   "dependencies": {
     "inquirer": "^7.0.0",
     "inquirer-file-selector-prompt": "^1.0.0"
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jmoore914/eslint-init.git"
+    "url": "git+https://github.com/jmoore914/eslint-initializer.git"
   },
   "keywords": [
     "eslint"
@@ -24,7 +24,7 @@
   "author": "jmoore914",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jmoore914/eslint-init/issues"
+    "url": "https://github.com/jmoore914/eslint-initializer/issues"
   },
-  "homepage": "https://github.com/jmoore914/eslint-init#readme"
+  "homepage": "https://github.com/jmoore914/eslint-initializer#readme"
 }
