@@ -1,15 +1,37 @@
 #!/usr/bin/env node
 
-const prompts = require('./prompts');
 const fs = require('fs');
+const {fetchTemplate} = require('./templateFetcher');
 
 
 
-async function eslintInit(){
-	if(!checkTemplateExists()){
-		const templateCreator = require('./templateCreator.js');
+async function eslintInit(replaceOrMerge){
+	let templateCreator = undefined;
+	const templateExists = checkTemplateExists();
+	if(!templateExists || replaceOrMerge){
+		templateCreator = require('./templateCreator.js');
+	}
+	if(!templateExists){
+		console.log('No config template found.');
 		await templateCreator.createTemplate();
 	}
+	if(replaceOrMerge){
+		if(replaceOrMerge === 'replace' && templateExists){
+			await templateCreator.createTemplate();
+		}
+		else if (replaceOrMerge==='merge'){
+			await templateCreator.mergeTemplate();
+			console.log('Templates merged.');
+		}
+	}
+	else{
+		await createConfig();
+	}
+}
+
+async function createConfig(){
+
+	const prompts = require('./prompts');
 	const configCreator = require('./configCreator');
 
 	const callingDir = process.cwd();
@@ -23,19 +45,13 @@ async function eslintInit(){
 
 function checkTemplateExists(){
 	try {
-		require('./eslintTemplate.js');
+		fetchTemplate();
 		return true;
 	}
 	catch(e){
-		try {
-			require('./eslintTemplate.json');
-			return true;
-		}
-		catch(e){
-			return false;
-			
-		}
+		return false;	
 	}
 }
 
-eslintInit();
+
+eslintInit(process.argv[2]);

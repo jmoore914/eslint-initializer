@@ -1,16 +1,7 @@
-const eslintTemplate = getTemplate();
-
-function getTemplate(){
-	try{
-		return require('./eslintTemplate.js');
-	}
-	catch(e){
-		return require('./eslintTemplate.json');
-	}
-}
+const {fetchTemplate} = require('./templateFetcher');
 
 function createConfigFromPromptResponses(promptResponses){
-	const eslintTemplate = getTemplate();
+	const eslintTemplate = fetchTemplate();
 	const plugins = getPluginsFromPromptResponses(promptResponses);
 	const exts = filterItemsByPlugins(eslintTemplate.extends, plugins);
 	const envs = getEnvFromPromptResponses(promptResponses);
@@ -20,12 +11,16 @@ function createConfigFromPromptResponses(promptResponses){
 	let eslintConfig = eslintTemplate;
 	delete eslintConfig.parser;
 	delete eslintConfig.parserOptions;
+	eslintConfig.parserOptions = {};
 	eslintConfig.env=envs;
 	eslintConfig.plugins=pluginNames;
 	eslintConfig.extends = exts;
 	eslintConfig.plugins=pluginNames;
 	eslintConfig.rules=rules;
 	eslintConfig = {...eslintConfig, ...parserConfig};
+	const DEFAULT_ECMA_VERSION = 2018;
+	eslintConfig.parserOptions.ecmaVersion = DEFAULT_ECMA_VERSION;
+
 	return eslintConfig;
 
 }

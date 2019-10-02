@@ -6,6 +6,9 @@
   },
   "description": "Create eslint config file in the calling directory",
   "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "dependencies": {
     "inquirer": "^7.0.0",
     "inquirer-file-selector-prompt": "^1.0.0"

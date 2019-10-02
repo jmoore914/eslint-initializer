@@ -2,7 +2,7 @@
 
 
 [![npm](https://img.shields.io/npm/v/eslint-initializer)](https://www.npmjs.com/package/eslint-initializer)
-![GitHub repo size](https://img.shields.io/github/repo-size/eslint-initializer)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/eslint-initializer)](https://www.npmjs.com/package/eslint-initializer)
 
 Quickly create an eslint config file in any directory based on your presets
 

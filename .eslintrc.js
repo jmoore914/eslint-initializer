@@ -2,7 +2,6 @@ module.exports ={
   "root": true,
   "env": {
     "node": true,
-    "commonjs": true,
     "es6": true
   },
   "extends": [
@@ -32,8 +31,7 @@ module.exports ={
     "no-use-before-define": [
       2,
       {
-        "functions": false,
-        "variables": false
+        "functions": false
       }
     ],
     "comma-style": [
@@ -62,5 +60,8 @@ module.exports ={
       "error",
       "never"
     ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
   }
 }
