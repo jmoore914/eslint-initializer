@@ -42,7 +42,7 @@ async function eslintInitMerge(){
 }
 
 function eslintInitVersion(){
-	const pkg = require('../package.json');
+	const pkg = require('./package.json');
 	console.log(pkg.version);
 }
 
