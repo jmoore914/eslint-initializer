@@ -5,7 +5,7 @@
     "eslint-init": "./bin/index.js"
   },
   "description": "Create eslint config file in the calling directory",
-  "main": "index.js",
+  "main": "./bin/index.js",
   "engines": {
     "node": ">=8.0.0"
   },
