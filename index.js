@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const {fetchTemplate} = require('../lib/templateFetcher');
-const templateCreator = require('../lib/templateCreator.js');
+const {fetchTemplate} = require('./lib/templateFetcher');
+const templateCreator = require('./lib/templateCreator.js');
 
 
 
@@ -68,8 +68,8 @@ function checkTemplateExists(){
 
 async function createConfig(){
 
-	const prompts = require('../lib/prompts');
-	const configCreator = require('../lib/configCreator');
+	const prompts = require('./lib/prompts');
+	const configCreator = require('./lib/configCreator');
 
 	const callingDir = process.cwd();
 	const promptResponses = await prompts.awaitPrompts();
