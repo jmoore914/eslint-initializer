@@ -14,6 +14,9 @@ npm i -g eslint-initializer
 ```
 
 ## Usage
+
+Basic usage:
+
 ```sh
 $ eslint-init
 ? Does your project use typescript? Yes
@@ -29,6 +32,24 @@ ESLint config created.
   ]
 }
 ```
+
+Add rules from a second eslintrc file to the saved template:
+
+```sh
+$ eslint-init -m
+```
+
+Replace the saved template with a new eslintrc file:
+
+```sh
+$ eslint-init -r
+```
+
+## Options
+    -v, --version                    Print program version
+    -m, --merge                      Merge rules from an eslintrc into the saved
+                                     template
+    -r, --replace                    Replace the saved template with a new eslintrc
 
 ## License
 
