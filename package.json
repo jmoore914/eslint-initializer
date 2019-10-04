@@ -1,6 +1,6 @@
 {
   "name": "eslint-initializer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "bin": {
     "eslint-init": "./bin/index.js"
   },
