@@ -1,11 +1,11 @@
 {
   "name": "eslint-initializer",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "bin": {
     "eslint-init": "./bin/index.js"
   },
   "description": "Create eslint config file in the calling directory",
-  "main": "./bin/index.js",
+  "main": "bin/index.js",
   "engines": {
     "node": ">=8.0.0"
   },
